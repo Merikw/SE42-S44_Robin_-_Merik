@@ -4,13 +4,15 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <shared-cache-mode>NONE</shared-cache-mode>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/fontys"/>
-      <property name="javax.persistence.jdbc.password" value="fontys"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://studmysql01.fhict.local:3306/dbi338166"/>
+      <property name="javax.persistence.jdbc.password" value="welkom"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.user" value="fontys"/>
+      <property name="javax.persistence.jdbc.user" value="dbi338166"/>
       <property name="eclipselink.ddl-generation" value="create-tables"/>
       <property name="eclipselink.logging.logger" value="DefaultLogger"/>
       <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="eclipselink.logging.logger” value=”DefaultLogger"/>
+      <property name="eclipselink.logging.level” value=”FINE"/>
     </properties>
   </persistence-unit>
 </persistence>
