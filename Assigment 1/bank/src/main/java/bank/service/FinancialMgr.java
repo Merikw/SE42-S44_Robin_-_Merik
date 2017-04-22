@@ -5,7 +5,6 @@ import bank.dao.AccountDAO;
 import bank.dao.AccountDAOJPAImpl;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class FinancialMgr {
