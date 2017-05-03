@@ -33,9 +33,9 @@ public class Item implements Comparable<Item>, Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-    @ManyToOne (cascade = {CascadeType.REMOVE})
+    @ManyToOne (cascade = {CascadeType.ALL})
     private User seller;
-    @OneToOne (cascade = {CascadeType.REMOVE}, orphanRemoval = true)
+    @OneToOne (cascade = {CascadeType.ALL}, orphanRemoval = true)
     private Bid highest;
     @Embedded
     @AttributeOverrides({

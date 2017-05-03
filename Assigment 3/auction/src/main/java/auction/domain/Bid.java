@@ -21,7 +21,7 @@ public class Bid implements Serializable {
     private FontysTime time;
     @Embedded
     private Money amount;
-    @ManyToOne(cascade = {CascadeType.REMOVE})
+    @ManyToOne(cascade = {CascadeType.ALL})
     private User buyer;
 
     public Bid() {
