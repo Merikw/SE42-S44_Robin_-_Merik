@@ -2,7 +2,6 @@ package auction.dao;
 
 import auction.domain.User;
 import java.util.List;
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
@@ -51,6 +50,7 @@ public class UserDAOJPAImpl implements UserDAO {
     public User findByEmail(String email) {
         Query query = entityManager.createNamedQuery("User.findByEmail", User.class);
         query.setParameter("email", email);
+        
         List<User> users = query.getResultList();
         if (users.size() != 1) {
             return null;
