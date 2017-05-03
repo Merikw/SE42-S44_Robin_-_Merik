@@ -1,16 +1,33 @@
 package auction.domain;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import nl.fontys.util.Money;
 
-public class Item implements Comparable, Serializable {
+@Entity
+@NamedQueries({
+    @NamedQuery(name = "Item.count", query = "select count(i) from Item as i"),
+    @NamedQuery(name = "Item.findById", query = "select i from Item as i where i.id = :id"),
+    @NamedQuery(name = "Item.getAll", query = "select i from Item as i"),
+    @NamedQuery(name = "Item.findByDescription", query = "select i from Item as i where i.description = :description"),})
 
+public class Item implements Comparable<Item>, Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private User seller;
     private Category category;
     private String description;
+
+    @OneToOne
     private Bid highest;
 
     public Item() {
@@ -51,18 +68,37 @@ public class Item implements Comparable, Serializable {
         return highest;
     }
 
-    public int compareTo(Object arg0) {
-        //TODO
+    @Override
+    public int compareTo(Item o) {
+        if(this.id > o.id){
+            return 1;
+        } else if (this.id.equals(o.id)){
+            return 0;
+        }
         return -1;
     }
 
-    public boolean equals(Object o) {
-        //TODO
-        return false;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        final Item other = (Item) obj;
+
+        return Objects.equals(this.id, other.getId()); 
     }
 
+    @Override
     public int hashCode() {
-        //TODO
-        return 0;
+        return super.hashCode(); 
     }
+    
+    
 }

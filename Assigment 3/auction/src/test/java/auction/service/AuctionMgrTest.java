@@ -1,6 +1,8 @@
 package auction.service;
 
+import auction.dao.ItemDAOJPAImpl;
 import auction.dao.UserDAOCollectionImpl;
+import auction.dao.UserDAOJPAImpl;
 import static org.junit.Assert.*;
 
 import nl.fontys.util.Money;
@@ -13,18 +15,32 @@ import auction.domain.Category;
 import auction.domain.Item;
 import auction.domain.User;
 import java.util.ArrayList;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import util.DatabaseCleaner;
 
 public class AuctionMgrTest {
 
+    private static final String PERSISTENCE_UNIT_NAME = "auction";
+    
     private AuctionMgr auctionMgr;
     private RegistrationMgr registrationMgr;
     private SellerMgr sellerMgr;
 
+    private EntityManager entityManager;
+
     @Before
     public void setUp() throws Exception {
-        registrationMgr = new RegistrationMgr(new UserDAOCollectionImpl());
-        auctionMgr = new AuctionMgr();
-        sellerMgr = new SellerMgr();
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        entityManager = entityManagerFactory.createEntityManager();
+
+        DatabaseCleaner databaseCleaner = new DatabaseCleaner(entityManager);
+        databaseCleaner.clean();
+
+        registrationMgr = new RegistrationMgr(new UserDAOJPAImpl(entityManager));
+        auctionMgr = new AuctionMgr(new ItemDAOJPAImpl(entityManager));
+        sellerMgr = new SellerMgr(new ItemDAOJPAImpl(entityManager));
     }
 
     @Test
