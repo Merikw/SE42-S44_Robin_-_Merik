@@ -1,5 +1,6 @@
 package auction.service;
 
+import auction.dao.UserDAOCollectionImpl;
 import static org.junit.Assert.*;
 
 import nl.fontys.util.Money;
@@ -21,7 +22,7 @@ public class AuctionMgrTest {
 
     @Before
     public void setUp() throws Exception {
-        registrationMgr = new RegistrationMgr();
+        registrationMgr = new RegistrationMgr(new UserDAOCollectionImpl());
         auctionMgr = new AuctionMgr();
         sellerMgr = new SellerMgr();
     }

@@ -4,7 +4,6 @@ import auction.domain.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import javax.persistence.EntityExistsException;
 
 public class UserDAOCollectionImpl implements UserDAO {
 
@@ -21,10 +20,9 @@ public class UserDAOCollectionImpl implements UserDAO {
 
     @Override
     public void create(User user) {
-         if (findByEmail(user.getEmail()) != null) {
-            throw new EntityExistsException();
+        if (findByEmail(user.getEmail()) == null) {
+            users.put(user.getEmail(), user);
         }
-        users.put(user.getEmail(), user);
     }
 
     @Override
@@ -34,7 +32,6 @@ public class UserDAOCollectionImpl implements UserDAO {
         }
         users.put(user.getEmail(), user);
     }
-
 
     @Override
     public List<User> findAll() {

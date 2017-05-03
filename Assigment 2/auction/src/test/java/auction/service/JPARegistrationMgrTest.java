@@ -1,22 +1,36 @@
 package auction.service;
 
-import auction.dao.UserDAOCollectionImpl;
+import auction.dao.UserDAOJPAImpl;
 import java.util.List;
 import static org.junit.Assert.*;
-
 
 import org.junit.Before;
 import org.junit.Test;
 
 import auction.domain.User;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import org.junit.After;
+import util.DatabaseCleaner;
 
-public class RegistrationMgrTest {
+public class JPARegistrationMgrTest {
+
+    private static final String PERSISTENCE_UNIT_NAME = "auction";
 
     private RegistrationMgr registrationMgr;
 
+    private EntityManager entityManager;
+
     @Before
     public void setUp() throws Exception {
-        registrationMgr = new RegistrationMgr(new UserDAOCollectionImpl());
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        entityManager = entityManagerFactory.createEntityManager();
+
+        DatabaseCleaner databaseCleaner = new DatabaseCleaner(entityManager);
+        databaseCleaner.clean();
+
+        registrationMgr = new RegistrationMgr(new UserDAOJPAImpl(entityManager));
     }
 
     @Test
@@ -50,7 +64,6 @@ public class RegistrationMgrTest {
         users = registrationMgr.getUsers();
         assertEquals(1, users.size());
         assertSame(users.get(0), user1);
-
 
         User user2 = registrationMgr.registerUser("xxx9@yyy");
         users = registrationMgr.getUsers();

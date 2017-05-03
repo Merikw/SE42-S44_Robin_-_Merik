@@ -2,20 +2,20 @@ package auction.service;
 
 import java.util.*;
 import auction.domain.User;
-import auction.dao.UserDAOCollectionImpl;
 import auction.dao.UserDAO;
 
 public class RegistrationMgr {
 
     private UserDAO userDAO;
 
-    public RegistrationMgr() {
-        userDAO = new UserDAOCollectionImpl();
+    public RegistrationMgr(UserDAO context) {
+        userDAO = context;
     }
 
     /**
      * Registreert een gebruiker met het als parameter gegeven e-mailadres, mits
      * zo'n gebruiker nog niet bestaat.
+     *
      * @param email
      * @return Een Userobject dat geïdentificeerd wordt door het gegeven
      * e-mailadres (nieuw aangemaakt of reeds bestaand). Als het e-mailadres
@@ -25,11 +25,7 @@ public class RegistrationMgr {
         if (!email.contains("@")) {
             return null;
         }
-        User user = userDAO.findByEmail(email);
-        if (user != null) {
-            return user;
-        }
-        user = new User(email);
+        User user = new User(email);
         userDAO.create(user);
         return user;
     }

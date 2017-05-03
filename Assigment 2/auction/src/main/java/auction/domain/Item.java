@@ -1,14 +1,21 @@
 package auction.domain;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import nl.fontys.util.Money;
 
-public class Item implements Comparable {
+public class Item implements Comparable, Serializable {
 
     private Long id;
     private User seller;
     private Category category;
     private String description;
     private Bid highest;
+
+    public Item() {
+        // Empty constructor used for JPA binding.
+    }
 
     public Item(User seller, Category category, String description) {
         this.seller = seller;

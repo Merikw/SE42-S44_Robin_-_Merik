@@ -347,6 +347,7 @@ public class Assignment {
         // SELECT ID, ACCOUNTNR, BALANCE, THRESHOLD FROM ACCOUNT WHERE (ID = ?) bind => [388]
 
         assertNotSame(account2, account3); // Niet gelijk aan elkaar omdat de persistence context leeg is gemaakt voor het ophalen van account3.
+        // Door het leeg maken van de entity manager kan het gecache account 2 niet meer worden toegewezen aan account 2.
 
         // Eindresultaat database:
         // Er is een nieuw record toegevoegd aan de 'ACCOUNT' tabel met het 
