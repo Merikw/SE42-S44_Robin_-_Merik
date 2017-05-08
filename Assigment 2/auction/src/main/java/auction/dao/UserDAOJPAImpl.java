@@ -52,11 +52,8 @@ public class UserDAOJPAImpl implements UserDAO {
         query.setParameter("email", email);
         
         List<User> users = query.getResultList();
-        if (users.size() != 1) {
-            return null;
-        }
-
-        return users.get(0);
+        
+        return users.size() == 1 ? users.get(0) : null;
     }
 
     @Override

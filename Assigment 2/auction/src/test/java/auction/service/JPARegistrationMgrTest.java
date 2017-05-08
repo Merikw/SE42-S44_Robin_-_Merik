@@ -11,7 +11,6 @@ import auction.domain.User;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import org.junit.After;
 import util.DatabaseCleaner;
 
 public class JPARegistrationMgrTest {
@@ -40,7 +39,7 @@ public class JPARegistrationMgrTest {
         User user2 = registrationMgr.registerUser("xxx2@yyy2");
         assertTrue(user2.getEmail().equals("xxx2@yyy2"));
         User user2bis = registrationMgr.registerUser("xxx2@yyy2");
-        assertEquals(user2bis, user2);
+        assertEquals(user2bis, user2); // Gekozen voor value identity, twee User objecten zijn equal aan elkaar wanneer de e-mailaddressen overeenkomen.
         //geen @ in het adres
         assertNull(registrationMgr.registerUser("abc"));
     }

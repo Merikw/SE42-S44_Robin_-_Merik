@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "account") // 'USER' is a reserved SQL keyword
+@Table(name = "account") // 'USER' is een gereserveerd SQL keyword dus we kiezen een alternatieve naam
 @NamedQueries({
     @NamedQuery(name = "User.count", query = "select count(u) from User as u"),
     @NamedQuery(name = "User.findByEmail", query = "select u from User as u where u.email = :email"),
@@ -34,6 +34,10 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public long getId() {
+        return id;
+    }
+    
     public String getEmail() {
         return email;
     }
@@ -52,7 +56,7 @@ public class User implements Serializable {
         
         final User other = (User) obj;
 
-        return Objects.equals(this.email, other.email);
+        return Objects.equals(this.id, other.id);
     }
 
 }

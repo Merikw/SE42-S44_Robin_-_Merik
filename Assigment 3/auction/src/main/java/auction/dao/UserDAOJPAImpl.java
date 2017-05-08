@@ -52,11 +52,8 @@ public class UserDAOJPAImpl implements UserDAO {
         Query query = entityManager.createNamedQuery("User.findByEmail", User.class);
         query.setParameter("email", email);
         List<User> users = query.getResultList();
-        if (users.size() != 1) {
-            return null;
-        }
 
-        return users.get(0);
+        return users.size() == 1 ? users.get(0) : null;
     }
 
     @Override
