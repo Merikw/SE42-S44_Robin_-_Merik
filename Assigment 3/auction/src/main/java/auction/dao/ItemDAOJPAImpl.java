@@ -72,6 +72,8 @@ public class ItemDAOJPAImpl implements ItemDAO {
     @Override
     public void remove(Item item) {
         entityManager.remove(item);
+        entityManager.getTransaction().begin();
+        entityManager.getTransaction().commit();
     }
 
 }

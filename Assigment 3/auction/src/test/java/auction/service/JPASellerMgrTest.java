@@ -15,7 +15,7 @@ import javax.persistence.Persistence;
 import util.DatabaseCleaner;
 
 /**
- * 
+ *
  * @author Merik Westerveld & Robin Laugs - Klas S44
  */
 public class JPASellerMgrTest {
@@ -70,15 +70,15 @@ public class JPASellerMgrTest {
         // revoke before bidding
         Item item1 = sellerMgr.offerItem(seller, cat, omsch);
         boolean res = sellerMgr.revokeItem(item1);
-        assertFalse(res);
+        assertTrue(res);
         int count = auctionMgr.findItemByDescription(omsch).size();
-        assertEquals(1, count);
+        assertEquals(0, count);
 
         // revoke after bid has been made
         Item item2 = sellerMgr.offerItem(seller, cat, omsch2);
         auctionMgr.newBid(item2, buyer, new Money(100, "Euro"));
         boolean res2 = sellerMgr.revokeItem(item2);
-        assertTrue(res2);
+        assertFalse(res2);
         int count2 = auctionMgr.findItemByDescription(omsch2).size();
         assertEquals(1, count2);
     }

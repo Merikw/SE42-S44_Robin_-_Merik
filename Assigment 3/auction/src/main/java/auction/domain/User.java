@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "account") // 'USER' is een gereserveerd SQL keyword dus we kiezen een alternatieve naam
+@Table(name = "account") // 'USER' is a reserver SQL-keyword so we chose an alternative name
 @NamedQueries({
     @NamedQuery(name = "User.count", query = "select count(u) from User as u"),
     @NamedQuery(name = "User.findByEmail", query = "select u from User as u where u.email = :email"),
@@ -22,7 +22,6 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     @Column(unique = true)
     private String email;
 
