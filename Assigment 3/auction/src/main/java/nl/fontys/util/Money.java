@@ -11,7 +11,7 @@ public class Money implements Serializable, Comparable {
 
 	public static final String EURO = "\u20AC";
 
-	private Money() {
+	public Money() {
 		currency="undefined";
 	}
 	

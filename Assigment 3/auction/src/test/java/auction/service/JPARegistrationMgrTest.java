@@ -3,16 +3,18 @@ package auction.service;
 import auction.dao.UserDAOJPAImpl;
 import java.util.List;
 import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import auction.domain.User;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import util.DatabaseCleaner;
 
+/**
+ * 
+ * @author Merik Westerveld & Robin Laugs - Klas S44
+ */
 public class JPARegistrationMgrTest {
 
     private static final String PERSISTENCE_UNIT_NAME = "auction";
@@ -39,7 +41,7 @@ public class JPARegistrationMgrTest {
         User user2 = registrationMgr.registerUser("xxx2@yyy2");
         assertTrue(user2.getEmail().equals("xxx2@yyy2"));
         User user2bis = registrationMgr.registerUser("xxx2@yyy2");
-        assertEquals(user2bis, user2);
+        assertNotEquals(user2bis, user2);
         //geen @ in het adres
         assertNull(registrationMgr.registerUser("abc"));
     }

@@ -1,7 +1,6 @@
 package auction.domain;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +20,7 @@ public class Bid implements Serializable {
     private FontysTime time;
     @Embedded
     private Money amount;
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne
     private User buyer;
 
     public Bid() {

@@ -1,26 +1,26 @@
 package auction.service;
 
 import auction.dao.ItemDAOJPAImpl;
-import auction.dao.UserDAOCollectionImpl;
 import auction.dao.UserDAOJPAImpl;
 import static org.junit.Assert.*;
-
 import nl.fontys.util.Money;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import auction.domain.Bid;
 import auction.domain.Category;
 import auction.domain.Item;
 import auction.domain.User;
-import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import util.DatabaseCleaner;
 
-public class AuctionMgrTest {
+/**
+ * 
+ * @author Merik Westerveld & Robin Laugs - Klas S44
+ */
+public class JPAAuctionMgrTest {
 
     private static final String PERSISTENCE_UNIT_NAME = "auction";
     
@@ -70,17 +70,15 @@ public class AuctionMgrTest {
         Item item1 = sellerMgr.offerItem(seller3, cat, omsch);
         Item item2 = sellerMgr.offerItem(seller4, cat, omsch);
 
-        ArrayList<Item> res = (ArrayList<Item>) auctionMgr.findItemByDescription(omsch2);
+        List<Item> res = auctionMgr.findItemByDescription(omsch2); // Cast naar ArrayList weggehaald omdat een een JPQL-query een lijst teruggeeft van het List-implementatietype Vector.
         assertEquals(0, res.size());
 
-        res = (ArrayList<Item>) auctionMgr.findItemByDescription(omsch);
+        res = auctionMgr.findItemByDescription(omsch);
         assertEquals(2, res.size());
-
     }
 
     @Test
     public void newBid() {
-
         String email = "ss2@nl";
         String emailb = "bb@nl";
         String emailb2 = "bb2@nl";

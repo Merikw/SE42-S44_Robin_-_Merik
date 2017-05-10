@@ -3,13 +3,14 @@ package auction.service;
 import auction.dao.UserDAOCollectionImpl;
 import java.util.List;
 import static org.junit.Assert.*;
-
-
 import org.junit.Before;
 import org.junit.Test;
-
 import auction.domain.User;
 
+/**
+ * 
+ * @author Merik Westerveld & Robin Laugs - Klas S44
+ */
 public class RegistrationMgrTest {
 
     private RegistrationMgr registrationMgr;

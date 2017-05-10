@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -19,28 +18,22 @@ import nl.fontys.util.Money;
 
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "Item.count", query = "select count(i) from Item as i")
-    ,
-    @NamedQuery(name = "Item.findById", query = "select i from Item as i where i.id = :id")
-    ,
-    @NamedQuery(name = "Item.getAll", query = "select i from Item as i")
-    ,
+    @NamedQuery(name = "Item.count", query = "select count(i) from Item as i"),
+    @NamedQuery(name = "Item.findById", query = "select i from Item as i where i.id = :id"),
+    @NamedQuery(name = "Item.getAll", query = "select i from Item as i"),
     @NamedQuery(name = "Item.findByDescription", query = "select i from Item as i where i.description = :description"),})
-
 public class Item implements Comparable<Item>, Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-    @ManyToOne (cascade = {CascadeType.ALL})
+    @ManyToOne
     private User seller;
-    @OneToOne (cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToOne
     private Bid highest;
     @Embedded
-    @AttributeOverrides({
-        @AttributeOverride(name = "description", column = @Column(name = "cat_description"))
-    })
+    @AttributeOverride(name = "description", column = @Column(name = "cat_description"))
     private Category category;
 
     public Item() {

@@ -2,7 +2,6 @@ package auction.dao;
 
 import auction.domain.User;
 import java.util.List;
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 

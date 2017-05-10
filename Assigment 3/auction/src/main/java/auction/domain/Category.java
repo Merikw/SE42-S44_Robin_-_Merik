@@ -6,7 +6,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Category implements Serializable {
 
-    private String description;
+    private final String description;
 
     public Category() {
         description = "undefined";
