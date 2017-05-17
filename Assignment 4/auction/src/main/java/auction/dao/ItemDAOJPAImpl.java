@@ -35,11 +35,14 @@ public class ItemDAOJPAImpl implements ItemDAO {
 
     @Override
     public void edit(Item item) {
+        entityManager.getTransaction().begin();
+
         if (find(item.getId()) == null) {
             throw new IllegalArgumentException();
         }
 
         entityManager.merge(item);
+        entityManager.getTransaction().commit();
     }
 
     @Override

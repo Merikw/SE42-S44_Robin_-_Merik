@@ -1,7 +1,11 @@
 package auction.domain;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Objects;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,8 +27,12 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    
     @Column(unique = true)
     private String email;
+    
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.PERSIST) 
+    private Set<Item> offeredItems;
 
     public User() {
         // Empty constructor used for JPA binding.
@@ -31,14 +40,28 @@ public class User implements Serializable {
 
     public User(String email) {
         this.email = email;
+
+        offeredItems = new HashSet<>();
     }
 
     public long getId() {
         return id;
     }
-    
+
     public String getEmail() {
         return email;
+    }
+
+    public Iterator<Item> getOfferedItems() {
+        return offeredItems.iterator();
+    }
+
+    public int numberOfOfferedItems() {
+        return offeredItems.size();
+    }
+
+    void addItem(Item item) {
+        offeredItems.add(item);
     }
 
     @Override
@@ -52,7 +75,7 @@ public class User implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        
+
         final User other = (User) obj;
 
         return Objects.equals(this.id, other.id);

@@ -3,6 +3,7 @@ package auction.domain;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.AttributeOverride;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -26,11 +27,15 @@ public class Item implements Comparable<Item>, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String description;
-    @ManyToOne
+    
+    @ManyToOne (cascade = CascadeType.PERSIST)
     private User seller;
-    @OneToOne
+    
+    @OneToOne (cascade = CascadeType.PERSIST)
     private Bid highest;
+    
     @Embedded
     @AttributeOverride(name = "description", column = @Column(name = "cat_description"))
     private Category category;
@@ -43,6 +48,8 @@ public class Item implements Comparable<Item>, Serializable {
         this.seller = seller;
         this.category = category;
         this.description = description;
+
+        seller.addItem(this);
     }
 
     public Long getId() {
@@ -66,10 +73,10 @@ public class Item implements Comparable<Item>, Serializable {
     }
 
     public Bid newBid(User buyer, Money amount) {
-        if (highest != null && highest.getAmount().compareTo(amount) >= 0) {
+        if (highest != null && highest.getAmount().compareTo(amount) >= 0 || buyer.equals(seller)) {
             return null;
         }
-        highest = new Bid(buyer, amount);
+        highest = new Bid(buyer, amount, this);
         return highest;
     }
 
@@ -98,11 +105,6 @@ public class Item implements Comparable<Item>, Serializable {
         final Item other = (Item) obj;
 
         return Objects.equals(this.id, other.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
     }
 
 }

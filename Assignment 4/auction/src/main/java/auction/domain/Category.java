@@ -19,5 +19,5 @@ public class Category implements Serializable {
     public String getDiscription() {
         return description;
     }
-    
+
 }
