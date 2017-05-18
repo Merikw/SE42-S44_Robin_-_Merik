@@ -44,7 +44,7 @@ public class Item implements Comparable<Item>, Serializable {
     private Category category;
 
     public Item() {
-        // Empty constructor used for JPA binding.
+        // Empty constructor used for JPA binding
     }
 
     public Item(User seller, Category category, String description) {
