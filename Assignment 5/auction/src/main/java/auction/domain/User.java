@@ -27,11 +27,11 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    
+
     @Column(unique = true)
     private String email;
-    
-    @OneToMany(mappedBy = "seller", cascade = CascadeType.PERSIST) 
+
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.PERSIST)
     private Set<Item> offeredItems;
 
     public User() {
@@ -79,6 +79,13 @@ public class User implements Serializable {
         final User other = (User) obj;
 
         return Objects.equals(this.id, other.id);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 37 * hash + (int) (this.id ^ (this.id >>> 32));
+        return hash;
     }
 
 }

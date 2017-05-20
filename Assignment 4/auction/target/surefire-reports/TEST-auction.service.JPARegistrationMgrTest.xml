@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="auction.service.JPARegistrationMgrTest" time="0.39" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="auction.service.JPARegistrationMgrTest" time="1.126" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -61,7 +61,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="auction.service.JPARegistrationMgrTest" name="registerUser" time="0.125"/>
-  <testcase classname="auction.service.JPARegistrationMgrTest" name="getUser" time="0.14"/>
-  <testcase classname="auction.service.JPARegistrationMgrTest" name="getUsers" time="0.125"/>
+  <testcase classname="auction.service.JPARegistrationMgrTest" name="registerUser" time="0.328"/>
+  <testcase classname="auction.service.JPARegistrationMgrTest" name="getUser" time="0.407"/>
+  <testcase classname="auction.service.JPARegistrationMgrTest" name="getUsers" time="0.391"/>
 </testsuite>

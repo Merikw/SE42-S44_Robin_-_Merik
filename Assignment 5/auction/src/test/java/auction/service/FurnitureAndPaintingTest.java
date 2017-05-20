@@ -1,5 +1,7 @@
 package auction.service;
 
+import auction.domain.Furniture;
+import auction.domain.Item;
 import auction.dao.ItemDAOJPAImpl;
 import auction.dao.UserDAOJPAImpl;
 import javax.persistence.EntityManager;
@@ -36,7 +38,6 @@ public class FurnitureAndPaintingTest {
         sellerMgr = new SellerMgr(new ItemDAOJPAImpl(entityManager));
     }
 
-
     @Test
     public void newFurniture() {
         String omsch = "omsch1";
@@ -51,7 +52,6 @@ public class FurnitureAndPaintingTest {
         User foundUser = registrationMgr.getUser(iemand1);
         Iterator<Item> it = foundUser.getOfferedItems();
         Item firstItem = it.next();
-   //        int xxx = 22;
         assertEquals("item added in offeredItems", furniture1, firstItem);
         Item item2 = sellerMgr.offerPainting(u1, cat, omsch, "Nachtwacht", "Rembrandt");
         it = registrationMgr.getUser(iemand1).getOfferedItems();
@@ -61,7 +61,7 @@ public class FurnitureAndPaintingTest {
         it.next();
         assertFalse(it.hasNext());
 
-        //de volgende code verwijderen als Item abstract is
+        // De volgende code verwijderen als Item abstract is gedeclareerd.
         Item item3 = sellerMgr.offerItem(u1, new Category("boek"), "The science of Discworld");
         it = registrationMgr.getUser(iemand1).getOfferedItems();
         assertTrue(it.hasNext());
@@ -81,4 +81,5 @@ public class FurnitureAndPaintingTest {
         assertEquals(foundFurniture.getHighestBid(), bid);
         assertTrue(foundFurniture.getClass() == Furniture.class);
     }
+    
 }

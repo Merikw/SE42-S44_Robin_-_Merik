@@ -1,25 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package auction.domain;
 
 import javax.persistence.Entity;
 
-/**
- *
- * @author Merik
- */
-
 @Entity
-public class Painting extends Item{
-    
+public class Painting extends Item {
+
     private String title;
     private String painter;
-    
-    public Painting(){
-        
+
+    public Painting() {
+        // Empty constructor used for JPA binding
     }
 
     public Painting(String title, String painter, User seller, Category category, String description) {
@@ -35,5 +25,5 @@ public class Painting extends Item{
     public String getPainter() {
         return painter;
     }
-    
+
 }

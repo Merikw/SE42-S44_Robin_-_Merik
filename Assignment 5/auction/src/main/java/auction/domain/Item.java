@@ -52,6 +52,10 @@ public class Item implements Comparable<Item>, Serializable {
         this.category = category;
         this.description = description;
 
+        addThisItemToSeller();
+    }
+
+    private void addThisItemToSeller() {
         seller.addItem(this);
     }
 
@@ -108,6 +112,13 @@ public class Item implements Comparable<Item>, Serializable {
         final Item other = (Item) obj;
 
         return Objects.equals(this.id, other.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.id);
+        return hash;
     }
 
 }
