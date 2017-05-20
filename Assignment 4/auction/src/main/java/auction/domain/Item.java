@@ -27,15 +27,15 @@ public class Item implements Comparable<Item>, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String description;
-    
-    @ManyToOne (cascade = CascadeType.PERSIST)
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private User seller;
-    
-    @OneToOne (cascade = CascadeType.PERSIST)
+
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Bid highest;
-    
+
     @Embedded
     @AttributeOverride(name = "description", column = @Column(name = "cat_description"))
     private Category category;
@@ -49,6 +49,10 @@ public class Item implements Comparable<Item>, Serializable {
         this.category = category;
         this.description = description;
 
+        addThisItemToSeller();
+    }
+
+    private void addThisItemToSeller() {
         seller.addItem(this);
     }
 
@@ -105,6 +109,13 @@ public class Item implements Comparable<Item>, Serializable {
         final Item other = (Item) obj;
 
         return Objects.equals(this.id, other.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.id);
+        return hash;
     }
 
 }
