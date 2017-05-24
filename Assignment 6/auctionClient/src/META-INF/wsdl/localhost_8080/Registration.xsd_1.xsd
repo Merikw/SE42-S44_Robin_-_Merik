@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://web.auction/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://web.auction/">
+
+<xs:element name="getUser" type="tns:getUser"></xs:element>
+
+<xs:element name="getUserResponse" type="tns:getUserResponse"></xs:element>
+
+<xs:element name="registerUser" type="tns:registerUser"></xs:element>
+
+<xs:element name="registerUserResponse" type="tns:registerUserResponse"></xs:element>
+
+<xs:element name="user" type="tns:user"></xs:element>
+
+<xs:complexType name="getUser">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="user">
+<xs:sequence>
+<xs:element name="id" type="xs:long"></xs:element>
+</xs:sequence>
+<xs:attribute name="email" type="xs:string" use="required"></xs:attribute>
+</xs:complexType>
+
+<xs:complexType name="registerUser">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registerUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
