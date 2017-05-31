@@ -16,7 +16,7 @@ import javax.xml.ws.Endpoint;
 public class Main {
 
     private static final String PERSISTENCE_UNIT_NAME = "auction";
-    private static final String ADDRESS = "http://localhost:8080/";
+    private static final String ADDRESS = "http://localhost:9090/";
 
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);

@@ -42,7 +42,7 @@ public class Item implements Comparable<Item>, Serializable {
     private User seller;
     
     @OneToOne
-    @XmlElement
+    @XmlElement(name = "highest")
     private Bid highest;
     
     @Embedded    
@@ -81,7 +81,7 @@ public class Item implements Comparable<Item>, Serializable {
     }
 
     public Bid newBid(User buyer, Money amount) {
-        if (highest != null && highest.getAmount().compareTo(amount) >= 0) {
+        if (this.getHighestBid() != null && this.getHighestBid().getAmount().compareTo(amount) >= 0) {
             return null;
         }
         highest = new Bid(buyer, amount);
