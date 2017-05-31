@@ -27,6 +27,7 @@ public class Main {
 
         Endpoint.publish(ADDRESS + Registration.class.getSimpleName(), new Registration(userDAOContext));
         Endpoint.publish(ADDRESS + Auction.class.getSimpleName(), new Auction(itemDAOContext));
+        Endpoint.publish(ADDRESS + DatabaseUtil.class.getSimpleName(), new DatabaseUtil(entityManager));  
     }
 
 }

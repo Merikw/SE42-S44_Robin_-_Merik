@@ -3,6 +3,7 @@ package auction.web;
 import auction.dao.UserDAO;
 import auction.domain.User;
 import auction.service.RegistrationMgr;
+import java.util.List;
 import javax.jws.WebService;
 
 /**
@@ -24,6 +25,10 @@ public class Registration {
     
     public User getUser(String email) {
         return  registrationMgr.getUser(email);
+    }
+    
+    public List<User> getUsers() {
+        return registrationMgr.getUsers();
     }
     
 }

@@ -4,4 +4,9 @@
     <system systemId="http://localhost:8080/Registration?xsd=1" uri="wsdl/localhost_8080/Registration.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/Auction?wsdl" uri="wsdl/localhost_8080/Auction.wsdl"/>
     <system systemId="http://localhost:8080/Auction?xsd=1" uri="wsdl/localhost_8080/Auction.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080?wsdl" uri="wsdl/localhost_8080.wsdl"/>
+    <system systemId="http://localhost:8080/?xsd=1" uri="wsdl/localhost_8080/.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AuctionService?wsdl" uri="wsdl/localhost_8080/AuctionService.wsdl"/>
+    <system systemId="http://localhost:8080/DatabaseUtilService?wsdl" uri="wsdl/localhost_8080/DatabaseUtilService.wsdl"/>
+    <system systemId="http://localhost:8080/DatabaseUtil?xsd=1" uri="wsdl/localhost_8080/DatabaseUtil.xsd_1.xsd"/>
 </catalog>

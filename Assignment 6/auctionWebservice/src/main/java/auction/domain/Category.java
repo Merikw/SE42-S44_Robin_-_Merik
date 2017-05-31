@@ -16,7 +16,7 @@ public class Category implements Serializable {
     public Category() {
         description = "undefined";
     }
-
+    
     public Category(String description) {
         this.description = description;
     }
