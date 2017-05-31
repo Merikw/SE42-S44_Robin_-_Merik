@@ -34,7 +34,7 @@ public class JPAAuctionMgrTest {
         datebaseUtil = new DatabaseUtilService().getDatabaseUtilPort();
         datebaseUtil.cleanDatabase();
     }
-
+    
     @Test
     public void getItem() {
         String email = "xx2@nl";
@@ -88,6 +88,7 @@ public class JPAAuctionMgrTest {
         money.setCents(10);
         money.setCurrency("eur");
         Bid new1 = auction.newBid(item1, buyer, money);
+        item1 = auction.findItemById(item1.getId()); // de state van item moet worden bijgewerkt omdat op het highest bid op de server inmiddels is bijgewerkt
         assertEquals(emailb, new1.getBuyer().getEmail());
 
         // lager bod
@@ -95,6 +96,7 @@ public class JPAAuctionMgrTest {
         money.setCents(9);
         money.setCurrency("eur");
         Bid new2 = auction.newBid(item1, buyer2, money);
+        item1 = auction.findItemById(item1.getId()); // de state van item moet worden bijgewerkt omdat op het highest bid op de server inmiddels is bijgewerkt
         assertNull(new2);
 
         // hoger bod

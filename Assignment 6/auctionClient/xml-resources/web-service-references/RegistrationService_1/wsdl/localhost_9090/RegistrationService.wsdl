@@ -10,30 +10,30 @@
 <message name="getUserResponse">
 <part name="parameters" element="tns:getUserResponse"></part>
 </message>
-<message name="getUsers">
-<part name="parameters" element="tns:getUsers"></part>
-</message>
-<message name="getUsersResponse">
-<part name="parameters" element="tns:getUsersResponse"></part>
-</message>
 <message name="registerUser">
 <part name="parameters" element="tns:registerUser"></part>
 </message>
 <message name="registerUserResponse">
 <part name="parameters" element="tns:registerUserResponse"></part>
 </message>
+<message name="getUsers">
+<part name="parameters" element="tns:getUsers"></part>
+</message>
+<message name="getUsersResponse">
+<part name="parameters" element="tns:getUsersResponse"></part>
+</message>
 <portType name="Registration">
 <operation name="getUser">
 <input wsam:Action="http://web.auction/Registration/getUserRequest" message="tns:getUser"></input>
 <output wsam:Action="http://web.auction/Registration/getUserResponse" message="tns:getUserResponse"></output>
 </operation>
-<operation name="getUsers">
-<input wsam:Action="http://web.auction/Registration/getUsersRequest" message="tns:getUsers"></input>
-<output wsam:Action="http://web.auction/Registration/getUsersResponse" message="tns:getUsersResponse"></output>
-</operation>
 <operation name="registerUser">
 <input wsam:Action="http://web.auction/Registration/registerUserRequest" message="tns:registerUser"></input>
 <output wsam:Action="http://web.auction/Registration/registerUserResponse" message="tns:registerUserResponse"></output>
+</operation>
+<operation name="getUsers">
+<input wsam:Action="http://web.auction/Registration/getUsersRequest" message="tns:getUsers"></input>
+<output wsam:Action="http://web.auction/Registration/getUsersResponse" message="tns:getUsersResponse"></output>
 </operation>
 </portType>
 <binding name="RegistrationPortBinding" type="tns:Registration">
@@ -47,7 +47,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="getUsers">
+<operation name="registerUser">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -56,7 +56,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="registerUser">
+<operation name="getUsers">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

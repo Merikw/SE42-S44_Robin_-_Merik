@@ -73,6 +73,7 @@ public class JPASellerMgrTest {
         money.setCents(100);
         money.setCurrency("Euro");
         auction.newBid(item2, buyer, money);
+        item2 = auction.findItemById(item2.getId()); // de state van item moet worden bijgewerkt omdat op het highest bid op de server inmiddels is bijgewerkt
         boolean res2 = auction.revokeItem(item2);
         assertFalse(res2);
         int count2 = auction.findItemByDescription(omsch2).size();

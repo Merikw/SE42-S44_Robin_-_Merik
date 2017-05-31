@@ -194,8 +194,8 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="Auctionservice">
-      <wsdl-url>http://localhost:9090/Auctionservice?wsdl</wsdl-url>
+    <client name="AuctionService_1">
+      <wsdl-url>http://localhost:9090/AuctionService?wsdl</wsdl-url>
       <local-wsdl-file>localhost_9090/Auctionservice.wsdl</local-wsdl-file>
       <package-name>auction.web</package-name>
       <catalog-file>catalog.xml</catalog-file>
@@ -214,7 +214,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:9090/Auctionservice?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:9090/AuctionService?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -226,9 +226,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="Auctionservice_1">
-      <wsdl-url>http://localhost:9090/Auctionservice?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_9090/Auctionservice.wsdl</local-wsdl-file>
+    <client name="RegistrationService_1">
+      <wsdl-url>http://localhost:9090/RegistrationService?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_9090/RegistrationService.wsdl</local-wsdl-file>
       <package-name>auction.web</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -246,7 +246,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:9090/Auctionservice?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:9090/RegistrationService?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -258,8 +258,8 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="DatabaseUtilservice">
-      <wsdl-url>http://localhost:9090/DatabaseUtilservice?wsdl</wsdl-url>
+    <client name="DatabaseUtilService_1">
+      <wsdl-url>http://localhost:9090/DatabaseUtilService?wsdl</wsdl-url>
       <local-wsdl-file>localhost_9090/DatabaseUtilservice.wsdl</local-wsdl-file>
       <package-name>auction.web</package-name>
       <catalog-file>catalog.xml</catalog-file>
@@ -278,103 +278,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:9090/DatabaseUtilservice?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-    <client name="Auctionservice_2">
-      <wsdl-url>http://localhost:9090/Auctionservice?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_9090/Auctionservice.wsdl</local-wsdl-file>
-      <package-name>auction.web</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:9090/Auctionservice?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-    <client name="DatabaseUtilservice_1">
-      <wsdl-url>http://localhost:9090/DatabaseUtilservice?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_9090/DatabaseUtilservice.wsdl</local-wsdl-file>
-      <package-name>auction.web</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:9090/DatabaseUtilservice?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-    <client name="Registrationservice">
-      <wsdl-url>http://localhost:9090/Registrationservice?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_9090/Registrationservice.wsdl</local-wsdl-file>
-      <package-name>auction.web</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:9090/Registrationservice?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:9090/DatabaseUtilService?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

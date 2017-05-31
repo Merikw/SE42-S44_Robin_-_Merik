@@ -71,8 +71,12 @@ public class ItemDAOJPAImpl implements ItemDAO {
 
     @Override
     public void remove(Item item) {
-        entityManager.remove(item);
         entityManager.getTransaction().begin();
+        
+        Query query = entityManager.createNamedQuery("Item.deleteItemWithId", Item.class);
+        query.setParameter("id", item.getId());
+        query.executeUpdate();
+        
         entityManager.getTransaction().commit();
     }
 

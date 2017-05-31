@@ -118,107 +118,56 @@
         <delete dir="${build.generated.dir}/jax-wsCache/DatabaseUtilService"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/auction/web"/>
     </target>
-    <target name="wsimport-client-Auctionservice" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Auctionservice"/>
-        <property name="wsdl-Auctionservice" location="xml-resources/web-service-references/Auctionservice/wsdl/localhost_9090/Auctionservice.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Auctionservice" destdir="${build.generated.dir}/jax-wsCache/Auctionservice" wsdl="${wsdl-Auctionservice}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/Auctionservice?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-Auctionservice}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Auctionservice"/>
+    <target name="wsimport-client-AuctionService_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AuctionService_1"/>
+        <property name="wsdl-AuctionService_1" location="xml-resources/web-service-references/AuctionService_1/wsdl/localhost_9090/Auctionservice.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AuctionService_1" destdir="${build.generated.dir}/jax-wsCache/AuctionService_1" wsdl="${wsdl-AuctionService_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/AuctionService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-AuctionService_1}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AuctionService_1"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Auctionservice">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AuctionService_1">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-Auctionservice" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/Auctionservice"/>
+    <target name="wsimport-client-clean-AuctionService_1" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AuctionService_1"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/auction/web"/>
     </target>
-    <target name="wsimport-client-Auctionservice_1" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Auctionservice_1"/>
-        <property name="wsdl-Auctionservice_1" location="xml-resources/web-service-references/Auctionservice_1/wsdl/localhost_9090/Auctionservice.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Auctionservice_1" destdir="${build.generated.dir}/jax-wsCache/Auctionservice_1" wsdl="${wsdl-Auctionservice_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/Auctionservice?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-Auctionservice_1}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Auctionservice_1"/>
+    <target name="wsimport-client-RegistrationService_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/RegistrationService_1"/>
+        <property name="wsdl-RegistrationService_1" location="xml-resources/web-service-references/RegistrationService_1/wsdl/localhost_9090/RegistrationService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/RegistrationService_1" destdir="${build.generated.dir}/jax-wsCache/RegistrationService_1" wsdl="${wsdl-RegistrationService_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/RegistrationService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-RegistrationService_1}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/RegistrationService_1"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Auctionservice_1">
+            <fileset dir="${build.generated.dir}/jax-wsCache/RegistrationService_1">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-Auctionservice_1" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/Auctionservice_1"/>
+    <target name="wsimport-client-clean-RegistrationService_1" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/RegistrationService_1"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/auction/web"/>
     </target>
-    <target name="wsimport-client-DatabaseUtilservice" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice"/>
-        <property name="wsdl-DatabaseUtilservice" location="xml-resources/web-service-references/DatabaseUtilservice/wsdl/localhost_9090/DatabaseUtilservice.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice" destdir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice" wsdl="${wsdl-DatabaseUtilservice}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/DatabaseUtilservice?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-DatabaseUtilservice}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice"/>
+    <target name="wsimport-client-DatabaseUtilService_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/DatabaseUtilService_1"/>
+        <property name="wsdl-DatabaseUtilService_1" location="xml-resources/web-service-references/DatabaseUtilService_1/wsdl/localhost_9090/DatabaseUtilservice.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DatabaseUtilService_1" destdir="${build.generated.dir}/jax-wsCache/DatabaseUtilService_1" wsdl="${wsdl-DatabaseUtilService_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/DatabaseUtilService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-DatabaseUtilService_1}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/DatabaseUtilService_1"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice">
+            <fileset dir="${build.generated.dir}/jax-wsCache/DatabaseUtilService_1">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-DatabaseUtilservice" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice"/>
+    <target name="wsimport-client-clean-DatabaseUtilService_1" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/DatabaseUtilService_1"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/auction/web"/>
     </target>
-    <target name="wsimport-client-Auctionservice_2" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Auctionservice_2"/>
-        <property name="wsdl-Auctionservice_2" location="xml-resources/web-service-references/Auctionservice_2/wsdl/localhost_9090/Auctionservice.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Auctionservice_2" destdir="${build.generated.dir}/jax-wsCache/Auctionservice_2" wsdl="${wsdl-Auctionservice_2}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/Auctionservice?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-Auctionservice_2}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Auctionservice_2"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Auctionservice_2">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-Auctionservice_2" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/Auctionservice_2"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/auction/web"/>
-    </target>
-    <target name="wsimport-client-DatabaseUtilservice_1" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice_1"/>
-        <property name="wsdl-DatabaseUtilservice_1" location="xml-resources/web-service-references/DatabaseUtilservice_1/wsdl/localhost_9090/DatabaseUtilservice.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice_1" destdir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice_1" wsdl="${wsdl-DatabaseUtilservice_1}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/DatabaseUtilservice?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-DatabaseUtilservice_1}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice_1"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice_1">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-DatabaseUtilservice_1" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/DatabaseUtilservice_1"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/auction/web"/>
-    </target>
-    <target name="wsimport-client-Registrationservice" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Registrationservice"/>
-        <property name="wsdl-Registrationservice" location="xml-resources/web-service-references/Registrationservice/wsdl/localhost_9090/Registrationservice.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Registrationservice" destdir="${build.generated.dir}/jax-wsCache/Registrationservice" wsdl="${wsdl-Registrationservice}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/Registrationservice?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-Registrationservice}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Registrationservice"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Registrationservice">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-Registrationservice" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/Registrationservice"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/auction/web"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Registration, wsimport-client-Auction, wsimport-client-localhost_8080, wsimport-client-RegistrationService, wsimport-client-AuctionService, wsimport-client-DatabaseUtilService, wsimport-client-Auctionservice, wsimport-client-Auctionservice_1, wsimport-client-DatabaseUtilservice, wsimport-client-Auctionservice_2, wsimport-client-DatabaseUtilservice_1, wsimport-client-Registrationservice"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-Registration, wsimport-client-Auction, wsimport-client-localhost_8080, wsimport-client-RegistrationService, wsimport-client-AuctionService, wsimport-client-DatabaseUtilService, wsimport-client-AuctionService_1, wsimport-client-RegistrationService_1, wsimport-client-DatabaseUtilService_1"/>
 </project>

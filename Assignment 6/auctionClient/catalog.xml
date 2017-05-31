@@ -11,9 +11,12 @@
     <system systemId="http://localhost:8080/DatabaseUtilService?wsdl" uri="xml-resources/web-service-references/DatabaseUtilService/wsdl/localhost_8080/DatabaseUtilService.wsdl"/>
     <system systemId="http://localhost:8080/DatabaseUtil?xsd=1" uri="xml-resources/web-service-references/DatabaseUtilService/wsdl/localhost_8080/DatabaseUtil.xsd_1.xsd"/>
     <system systemId="http://localhost:9090/Auctionservice?wsdl" uri="xml-resources/web-service-references/Auctionservice_2/wsdl/localhost_9090/Auctionservice.wsdl"/>
-    <system systemId="http://localhost:9090/Auction?xsd=1" uri="xml-resources/web-service-references/Auctionservice_2/wsdl/localhost_9090/Auction.xsd_1.xsd"/>
     <system systemId="http://localhost:9090/DatabaseUtilservice?wsdl" uri="xml-resources/web-service-references/DatabaseUtilservice_1/wsdl/localhost_9090/DatabaseUtilservice.wsdl"/>
-    <system systemId="http://localhost:9090/DatabaseUtil?xsd=1" uri="xml-resources/web-service-references/DatabaseUtilservice_1/wsdl/localhost_9090/DatabaseUtil.xsd_1.xsd"/>
     <system systemId="http://localhost:9090/Registrationservice?wsdl" uri="xml-resources/web-service-references/registrationService/wsdl/localhost_9090/Registrationservice.wsdl"/>
-    <system systemId="http://localhost:9090/Registration?xsd=1" uri="xml-resources/web-service-references/registrationService/wsdl/localhost_9090/Registration.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/AuctionService?wsdl" uri="xml-resources/web-service-references/AuctionService_1/wsdl/localhost_9090/Auctionservice.wsdl"/>
+    <system systemId="http://localhost:9090/Auction?xsd=1" uri="xml-resources/web-service-references/AuctionService_1/wsdl/localhost_9090/Auction.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/RegistrationService?wsdl" uri="xml-resources/web-service-references/RegistrationService_1/wsdl/localhost_9090/RegistrationService.wsdl"/>
+    <system systemId="http://localhost:9090/Registration?xsd=1" uri="xml-resources/web-service-references/RegistrationService_1/wsdl/localhost_9090/Registration.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/DatabaseUtilService?wsdl" uri="xml-resources/web-service-references/DatabaseUtilService_1/wsdl/localhost_9090/DatabaseUtilservice.wsdl"/>
+    <system systemId="http://localhost:9090/DatabaseUtil?xsd=1" uri="xml-resources/web-service-references/DatabaseUtilService_1/wsdl/localhost_9090/DatabaseUtil.xsd_1.xsd"/>
 </catalog>

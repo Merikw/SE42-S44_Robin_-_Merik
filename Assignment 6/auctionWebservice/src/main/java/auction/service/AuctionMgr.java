@@ -5,7 +5,6 @@ import nl.fontys.util.Money;
 import auction.domain.Bid;
 import auction.domain.Item;
 import auction.domain.User;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AuctionMgr {
