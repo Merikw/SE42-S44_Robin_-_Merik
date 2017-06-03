@@ -57,7 +57,7 @@ public class JPARegistrationMgrTest {
         User user1 = registration.registerUser("xxx8@yyy");
         users = registration.getUsers();
         assertEquals(1, users.size());
-        assertSame(users.get(0), user1);
+        assertEquals(users.get(0).getEmail(), user1.getEmail());
 
         User user2 = registration.registerUser("xxx9@yyy");
         users = registration.getUsers();

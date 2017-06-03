@@ -27,6 +27,8 @@ public class UserDAOJPAImpl implements UserDAO {
         if (findByEmail(user.getEmail()) == null) {
             entityManager.persist(user);
             entityManager.getTransaction().commit();
+        } else {
+            entityManager.getTransaction().commit();
         }
     }
 
