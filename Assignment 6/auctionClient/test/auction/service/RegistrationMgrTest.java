@@ -11,14 +11,14 @@ import auction.web.RegistrationService;
 import auction.web.User;
 
 /**
- * 
+ *
  * @author Merik Westerveld & Robin Laugs - Klas S44
  */
 public class RegistrationMgrTest {
 
     private Registration registration;
     private DatabaseUtil datebaseUtil;
-    
+
     @Before
     public void setUp() {
         registration = new RegistrationService().getRegistrationPort();
@@ -33,6 +33,7 @@ public class RegistrationMgrTest {
         User user2 = registration.registerUser("xxx2@yyy2");
         assertTrue(user2.getEmail().equals("xxx2@yyy2"));
         User user2bis = registration.registerUser("xxx2@yyy2");
+        assertEquals(user2bis.getEmail(), user2.getEmail());
         //geen @ in het adres
         assertNull(registration.registerUser("abc"));
     }
@@ -41,6 +42,7 @@ public class RegistrationMgrTest {
     public void getUser() {
         User user1 = registration.registerUser("xxx5@yyy5");
         User userGet = registration.getUser("xxx5@yyy5");
+        assertEquals(userGet.getEmail(), user1.getEmail());
         assertNull(registration.getUser("aaa4@bb5"));
         registration.registerUser("abc");
         assertNull(registration.getUser("abc"));
