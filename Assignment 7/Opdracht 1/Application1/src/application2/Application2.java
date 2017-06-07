@@ -38,7 +38,7 @@ public class Application2 {
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
 
-        byte[] signature = generateSignature(key, name);
+        byte[] signature = generateSignature(key, name, content);
         
         persistSignature(name, content, signature);
     }
@@ -85,13 +85,13 @@ public class Application2 {
         return content;
     }
 
-    private static byte[] generateSignature(PrivateKey key, String name) {
+    private static byte[] generateSignature(PrivateKey key, String name, String content) {
         byte[] bytes = null;
 
         try {
             Signature signature = Signature.getInstance("SHA1withRSA");
             signature.initSign(key);
-            signature.update(name.getBytes());
+            signature.update(content.getBytes());
             bytes = signature.sign();
         } catch (NoSuchAlgorithmException | SignatureException | InvalidKeyException e) {
             logger.log(Level.SEVERE, "An error occurred while creating the signature.", e);
