@@ -1,7 +1,5 @@
 package application3.controller;
 
-import java.security.PublicKey;
-
 /**
  *
  * @author Merik Westerveld en Robin Laugs - Klas S44
@@ -9,5 +7,7 @@ import java.security.PublicKey;
 public interface Encryption {
 
     boolean fileIsVerified(String name);
+    
+    String getMessage(String name);
 
 }

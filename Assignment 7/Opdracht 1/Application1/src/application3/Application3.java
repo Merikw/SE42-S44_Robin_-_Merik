@@ -17,8 +17,10 @@ public class Application3 {
 
         Encryption controller = new EncryptionController();
         boolean verified = controller.fileIsVerified(name);
-
         System.out.println("File verified: " + verified);
+        
+        String message = controller.getMessage(name);
+        System.out.println("Message: " + message);
     }
 
 }

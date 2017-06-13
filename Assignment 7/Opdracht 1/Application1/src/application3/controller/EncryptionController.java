@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class EncryptionController implements Encryption {
 
-    private final Logger logger = Logger.getLogger(PersistenceController.class.getName());
+    private static final Logger logger = Logger.getLogger(PersistenceController.class.getName());
 
     private final Persistence persistence;
 
@@ -48,6 +48,12 @@ public class EncryptionController implements Encryption {
         }
 
         return false;
+    }
+
+    @Override
+    public String getMessage(String name) {
+        FileContent fileContent = persistence.readFile(name);
+        return fileContent.getContent();
     }
 
 }
